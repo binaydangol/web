@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>API Project</title>
+</head>
+<body>
+
+<h1 style="text-align: center">Temperaure Forecast</h1>
+<form action="" method="post" style="text-align: center">
+    {% csrf_token %}
+    <input type="text" name="countryid" placeholder="Country ID. Ex: NP for Nepal"><br>
+    <br>
+    <input type="text" name="cityname" placeholder="City Name"><br><br>
+    <input type="submit" value="Search">
+</form>
+
+
+
+{{place_name}}  {{date}}<br>
+The Maximum temperature = {{MaxTemp}} F<br>
+The Maximum temperature = {{MinTemp}}F<br>
+Today day will be {{daytype}} :: {{daylong}}<br>
+
+
+<hr>
+<form action="corona" method="post" style="text-align: center">
+      {% csrf_token %}
+     <input type="submit" value="Corona information">
+</form>
+
+</body>
+</html>

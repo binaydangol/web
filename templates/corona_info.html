@@ -1,0 +1,92 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static '/cssTemplate/Bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css' %}" >
+     <link rel="stylesheet" type="text/css" href="{% static '/cssTemplate/corona.css' %}" >
+</head>
+<body>
+<h1>World's Live Information on corona Virus </h1>
+<div class = "summary">
+    <p>Total Cases : <a style="color: orange">{{case}} </a> </p> <br>
+<p> Total deaths : <a style="color: red">{{death}}</a></p> <br>
+<p> Total recovered : <a style="color: green">{{recover}}</a></p><br>
+</div>
+
+<hr>
+<div class = "summary2">
+<p style="text-align:center">
+<p>Currently Infected Patients : <a style="color: green">{{cip}}</a></p>
+<p>Patients in Mild Condition : <a style="color: green">{{imc}}</a></p>
+<p> Patients in Serious or Critical condition : <a style="color: green">{{soc}}</a></p>
+<p>Total Cases which had an outcome : <a style="color: green">{{cwhao}}</a></p>
+<p>Recovered / Discharged : <a style="color: green">{{rd}}</a></p>
+<p>Total Deaths : <a style="color: green">{{d}}</a></p>
+</p>
+</div>
+
+ <div id="wrapper">
+  <h1> COVID-19 Update </h1>
+     </div>
+<table class="table table-striped">
+
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Country Name</th>
+        <th scope="col">Total Cases</th>
+        <th scope="col">New Cases</th>
+        <th scope="col">Total Deaths</th>
+        <th scope="col">New Deaths</th>
+        <th scope="col">Total Recovered</th>
+        <th scope="col">Active Cases</th>
+        <th scope="col">Serious and Critical</th>
+        <th scope="col">Cases Per Million</th>
+        <th scope="col">Death Per Millions </th>
+        <th scope="col">Total Tests</th>
+        <th scope="col">Tests Per Millions </th>
+        <th scope="col">Total Population</th>
+
+      </tr>
+    </thead>
+
+  <tbody>
+
+      <tbody>
+
+      {% for c in contryDet %}
+       <tr scope="row">
+
+        <td> {{c.Index}}</td>
+           <td> {{c.Country_Name}}</td>
+           <td> {{c.Total_Cases}}</td>
+           <td> {{c.New_Cases}}</td>
+           <td> {{c.Deaths_Per_Country}}</td>
+           <td> {{c.New_Death}}</td>
+           <td> {{c.Total_Recovered}}</td>
+           <td> {{c.Active_Cases}}</td>
+           <td> {{c.Serious_and_Critical}}</td>
+           <td> {{c.Cases_Per_Million}}</td>
+           <td> {{c.Death_Per_Millions}}</td>
+           <td> {{c.Total_Tests}}</td>
+           <td> {{c.Tests_Per_Millions}}</td>
+           <td> {{c.Total_Population}}</td>
+
+       </tr>
+        {% endfor %}
+
+</table>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
